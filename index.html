@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Форма регистрации</h1>
+    <div class="form-container">
+        <form name="userInfo">
+            <div class="type1">
+                <label for="userName">Введите ваше имя</label>
+                <input type="text" name="userName" placeholder="Ваше имя" minlength="2" maxlength="20" required>
+                <span class="error" id="usernameError">В имени могут быть только буквы и пробелы</span>
+            </div>
+            <div class="type1">
+                <label for="userEmail">Введите вашу почту</label>
+                <input type="text" name="userEmail" placeholder="Введите адрес email" required>
+                <span class="error" id="userEmailError">Email должен содержать символ '@' и доменное имя</span>
+            </div>
+            <div class="type1">
+                <label for="userAge">Введите ваш возраст</label>
+                <input type="number" name="userAge" placeholder="Сколько вам лет?">
+                <span class="error" id="userAgeError">Введите число</span>
+            </div>
+            <fieldset class="type2">
+                <legend>Выберите ваш пол</legend>
+                <div>
+                    <input type="radio" name="gender" value="Женский">
+                    <label for="gender">Женский</label>
+                    <input type="radio" name="gender" value="Мужской">
+                    <label for="gender">Мужской</label>
+                </div>
+                <span class="error" id="genderError">Вы забыли выбрать пол</span>
+            </fieldset>
+            <div class="type1">
+                <label for="profession">Кем вы работаете?</label>
+                <select name="profession" required>
+                    <option value="" disabled selected>Выберите профессию</option>
+                    <option value="doctor">Врач</option>
+                    <option value="IT">Программист</option>
+                    <option value="teacher">Учитель</option>
+                    <option value="designer">Дизайнер</option>
+                    <option value="engineer">Инженер</option>
+                    <option value="saller">Продавец</option>
+                    <option value="other">Другое</option>
+                </select>
+                <span class="error" id="professionError">Нужно выбрать профессию</span>
+            </div>
+            <div class="type1">
+                <label for="userPassword">Введите новый пароль</label>
+                <input type="text" name="password" minlength="8" placeholder="Более 8 знаков, из них-одна заглавная буква, строчная и цифра" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$" required>
+                <span class="error" id="passwordError">Нужно придумать пароль</span>
+            </div>
+            <div>
+                <input type="checkbox" name="agree" required>
+                <label for="agree">Согласен с политикой обработки данных</label>
+                <span class="error" id="agreeError">Нужно согласиться с обработкой данных</span>
+            </div>
+            <div class="buttons">
+                <button type="submit" id="submitBtn" name="submitBtn" value="Отправить">Отправить</button>
+                <button type="reset" id="resetbtn">Очистить форму</button>
+            </div>
+        </form>
+        </div>
+    </div>
+<script src="/main.js"></script>
+</body>
+</html>
